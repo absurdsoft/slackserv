@@ -1,0 +1,14 @@
+version: "3.5"
+
+services:
+  app_binary:
+    build:
+      context: ./
+      dockerfile: docker/app/Dockerfile
+      target: binary
+    env_file:
+      - .env
+    ports:
+      - "8567:8567"
+    restart: on-failure
+
